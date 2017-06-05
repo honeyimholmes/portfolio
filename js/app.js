@@ -17,20 +17,19 @@ document.addEventListener("DOMContentLoaded", function () {
     
     menuBtn.addEventListener("click", function(e){
         menuLeft.classList.toggle("navbar-fixed-full");
+        setTimeout(menuChange, 1000);
+
+    }); 
+    
+    function menuChange() {
         menuBtn.classList.toggle("fa-code");
         menuLeftHidden.classList.toggle("menu-show");
         socialList.classList.toggle("social-close");
         socialListHidden.classList.toggle("social-list-open");
-        menuClass.style.marginTop = "30px";
-    }); 
+        menuClass.style.marginTop = "30px"; 
+    }
     
-    redaktor.addEventListener("mouseover", function(e){
-        portfolioRed.style.opacity = "1";
-    });
-    
-    feDev.addEventListener("mouseover", function(e){
-        portfolioFront.style.opacity = "1";
-    })
+
     
                     
 });
