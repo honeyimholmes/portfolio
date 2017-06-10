@@ -4,20 +4,33 @@ html, body {
 }
 
 body {
-    background-color: #d6d6d6;
     overflow-x: hidden;
     overflow-y: visible;
     font-family: 'Raleway', sans-serif;
+    background: #d6d6d6;
+    background: -moz-linear-gradient(top, #d6d6d6 0%, #ffffff 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #d6d6d6), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(top, #d6d6d6 0%, #ffffff 100%);
+    background: -o-linear-gradient(top, #d6d6d6 0%, #ffffff 100%);
+    background: -ms-linear-gradient(top, #d6d6d6 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #d6d6d6 0%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#ffffff', GradientType=0 );
+
 }
 
 a {
-    color: #d40028;
+    color: #f57248;
     text-decoration: none;
 }
 
 a:hover {
     color: #ffa800;
     text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
 }
 
 .navbar ul {
@@ -35,15 +48,15 @@ a:hover {
     position: fixed;
     min-height: 100%;
     border: none;
-    -webkit-transition: width 0.65s; /* Safari */
-    transition: width 2s 0.65s;
+/*    -webkit-transition: width 0.65s;  Safari 
+    transition: width 2s 0.65s;*/
     z-index: 9;
 }
 
 .navbar-fixed-full {
     width: 200px;
-    -webkit-transition: width 2s; /* Safari */
-    transition: width 2s;
+/*    -webkit-transition: width 2s;   
+    transition: width 2s;*/
 
 }
 
@@ -150,7 +163,7 @@ a:hover {
     display: none;
     width: 200px;
     text-transform: uppercase;
-    transition: display 0.1s ease;
+    /*transition: display 0.1s ease;*/
 }
 
 .menu-list {
@@ -319,16 +332,113 @@ li a:hover {
 .content-box h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .content-box h2 {
-    font-size: 28px;
+    font-size: 38px;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content-box img {
+    display: inline-block;
+    height: 80px;
+    margin: 10px;
 }
 
 .highlight {
     color: #ffa800;
+}
+
+.navbar-nav {
+    background-color: #fff;
+}
+
+.navbar-nav li {
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav li:hover {
+    background-color: #f0eeee;
+}
+
+.logo-xsmall {
+    margin-left: 15px;
+    height: 35px;
+    margin-top: 10px;
+    display: inline-block;
+    float: left;
+}
+
+
+.socials {
+    text-align: center;
+}
+
+.socials li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.fa-portfolio {
+    font-size: 80px;
+}
+
+.portfolio-content:hover {
+    color: #ffa800;
+}
+
+#writing {
+    margin-top: 5%;
+}
+
+.copywriting {
+    margin-bottom: 40px;
+}
+
+.panel-heading {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.portfolio-content a {
+    color: #333;
+}
+
+.portfolio-content a:hover {
+    color: #ffa800;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 13%;
+  bottom: 0;
+  left: 5%;
+  right: 0;
+  height: 80%;
+  width: 90%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.panel-body:hover .overlay {
+  opacity: 1;
+}
+
+.panel-img-text {
+  color: #333;
+  font-weight: 400;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 @media (min-width: 768px) {
@@ -355,6 +465,22 @@ li a:hover {
     .header-title-small {
         display: block;
     }
+    
+    .content-box {
+        padding: 20px;
+    }
+    
+    .header-small-name {
+        display: none;
+    }
+    
+    .title-portfolio {
+        margin-top: 50px;
+    }
+    
+    .panel-img-text {
+ 
+    font-size: 14px;
      
 }
 
@@ -369,5 +495,20 @@ li a:hover {
     .test {
         opacity: 0;
     }
+}
+
+@media (max-width: 440px) {
+    .title-portfolio {
+        display: none;
+    }
+    
+    .panel-img-text {
+        font-size: 12px;
+    }
+    
+    .overlay {
+        top: 20%;
+    }
+    
 }
 

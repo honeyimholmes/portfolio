@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function() {
 
     var menuBtn = document.querySelector(".menu-btn");
     var menuLeft = document.querySelector(".navbar-fixed-left");
@@ -12,12 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var portfolioRed = document.querySelector(".header-port-1");
     var portfolioFront = document.querySelector(".header-port-2");
     var feDev = document.querySelector(".fed");
-    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
     
     menuBtn.addEventListener("click", function(e){
         menuLeft.classList.toggle("navbar-fixed-full");
-        setTimeout(menuChange, 1000);
+        menuChange();
 
     }); 
     
@@ -29,6 +27,19 @@ document.addEventListener("DOMContentLoaded", function () {
         menuClass.style.marginTop = "30px"; 
     }
     
+    var portfolioLinks = $('.portfolio-content').find($('a'));
+    
+    
+    portfolioLinks.on('click', function(e){
+        e.preventDefault();
+        var href = $(this).attr('href');
+        var offset = $(href).offset().top;
+        
+            $('html, body').animate({
+                scrollTop: offset 
+            }, 2000);
+            
+    });
 
     
                     
